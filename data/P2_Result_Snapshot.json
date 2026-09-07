@@ -1,0 +1,47 @@
+{
+  "cutoff": "2026-07-23",
+  "jurisdictions": 6,
+  "institutional_N": 58,
+  "institutional_counts": {
+    "E": 21,
+    "P": 13,
+    "U": 24
+  },
+  "country_counts": {
+    "UAE": [6,4,4,14],
+    "Saudi Arabia": [3,4,4,11],
+    "Qatar": [2,2,6,10],
+    "Oman": [2,1,5,8],
+    "Bahrain": [6,0,1,7],
+    "Kuwait": [2,2,4,8]
+  },
+  "stratum_counts": {
+    "G1": [9,1,4,14],
+    "G2": [9,9,7,25],
+    "G3": [3,3,13,19]
+  },
+  "primary_chain": {
+    "L3_E": "1/6",
+    "L4_E": "6/6",
+    "L4E_L3_notE": "5/6",
+    "L3_composition": {"E":1,"P":2,"U":3},
+    "minimum_L4_minus_L3": 0.5
+  },
+  "broader_UAE_OBEF": {
+    "L3_E": "2/6",
+    "L4_E": "6/6",
+    "L4E_L3_notE": "4/6",
+    "minimum_L4_minus_L3": 0.5,
+    "L3_composition": {"E":2,"P":1,"U":3}
+  },
+  "oldest_three": {
+    "N": 47,
+    "E": 19,
+    "P": 7,
+    "U": 21
+  },
+  "bahrain_L3_boundary": {
+    "state": "U",
+    "basis": "K-12-only Digital Empowerment program targets the schools of Bahrain and does not document an HE translation process"
+  }
+}
