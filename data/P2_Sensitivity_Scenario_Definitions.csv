@@ -1,0 +1,3 @@
+Scenario_ID,Scenario,Jurisdiction,Layer,Replacement_state,Basis
+OMN_NO_SQU,Without recovered SQU source,Oman,L4,P,OMN04 Before_recovery_state in source-recovery ledger
+UAE_OBEF_BROAD,Broader UAE OBEF interpretation,United Arab Emirates,L3,E,UAE07 broader HE operational-framework sensitivity
