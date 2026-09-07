@@ -1,0 +1,11 @@
+Claim,Primary artifact,Supporting artifact
+L4 explicit in 6/6 and L3 explicit in 1/6,data/P2_ITT2026_Primary_Chain.csv,data/P2_ITT2026_36_Source_Register_Current.csv
+Institution panel is 58 with 21E/13P/24U,data/P2_58_Institution_Evidence_Ledger.csv,data/P2_Country_State_Summary.csv
+Every selected jurisdictional panel has at least two E and at least one non-E,data/P2_Country_State_Summary.csv,data/P2_58_Institution_Evidence_Ledger.csv
+All 58 selected HEIs have an official eligibility source in the archive,data/P2_Selected_HEI_Eligibility_Certificates.csv,data/P2_Official_Eligibility_Registry_Sources.csv
+Non-traditional/boundary HEIs are handled under an explicit eligibility audit,data/P2_Retrospective_Eligibility_Boundary_Audit.csv,data/P2_Eligibility_Boundary_Audit.md
+U uses a documented bilingual search stopping rule,data/P2_U_Search_Stopping_Rule.md,data/P2_Documented_Bilingual_Search_Log_29.csv
+Oldest-three sensitivity is 47 with 19E/7P/21U,data/P2_Oldest3_Tie_Sensitivity_Membership.csv,data/P2_Oldest3_Tie_Sensitivity_Summary.csv
+Minimum L4-L3 fuzzy gap is 0.500,data/P2_ITT2026_IVFS_Representation_Robustness.csv,data/P2_UAE_OBEF_L3_Broader_Sensitivity.csv
+UAE OBEF broader interpretation gives L3 E=2/6,data/P2_UAE_OBEF_L3_Broader_Sensitivity.csv,data/P2_ITT2026_36_Source_Register_Current.csv
+Robustness rows are derived from locked chain and explicit scenario definitions,data/P2_ITT2026_Robustness_Summary.csv,data/P2_Sensitivity_Scenario_Definitions.csv
