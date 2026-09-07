@@ -1,0 +1,6 @@
+Analysis_condition,L3_explicit,L4_explicit,L4E_L3_notE,Interpretation
+Without recovered SQU source,1/6,5/6,4/6,Discontinuity already present
+Primary recovered chain,1/6,6/6,5/6,Same direction; larger extent
+Broader UAE OBEF interpretation,2/6,6/6,4/6,Gap persists under more permissive L3 coding
+Leave out Saudi Arabia,0/5,5/5,5/5,Only L3-explicit jurisdiction removed
+Leave out any one other jurisdiction,1/5,5/5,4/5,Five equivalent leave-one-out cases
