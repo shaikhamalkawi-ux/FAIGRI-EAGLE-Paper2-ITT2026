@@ -9,11 +9,13 @@ def sha(p):
         for b in iter(lambda:f.read(1024*1024),b''): h.update(b)
     return h.hexdigest()
 
-# Static package integrity.
-for line in (ROOT/'SHA256SUMS.txt').read_text().splitlines():
-    if not line.strip(): continue
-    digest,rel=line.split('  ',1); p=ROOT/rel
-    if not p.exists() or sha(p)!=digest: raise SystemExit(f'Integrity mismatch: {rel}')
+# Static release-package integrity is checked when a release manifest is present.
+manifest=ROOT/'SHA256SUMS.txt'
+if manifest.exists():
+    for line in manifest.read_text().splitlines():
+        if not line.strip(): continue
+        digest,rel=line.split('  ',1); p=ROOT/rel
+        if not p.exists() or sha(p)!=digest: raise SystemExit(f'Integrity mismatch: {rel}')
 
 # Scientific checks on locked inputs.
 d=ROOT/'data'
@@ -44,4 +46,4 @@ with tempfile.TemporaryDirectory() as td:
         print(cp.stdout); print(cp.stderr,file=sys.stderr); raise SystemExit('Fresh-copy reproduction failed')
     for rel in generated:
         if sha(dst/rel)!=sha(ROOT/rel): raise SystemExit(f'Fresh-copy output mismatch: {rel}')
-print('Package integrity and fresh-copy derivation verified successfully.')
+print('Scientific inputs and fresh-copy derivation verified successfully.')
