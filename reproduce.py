@@ -47,12 +47,14 @@ def chain_metrics(frame):
 def frac(x,n): return f'{x}/{n}'
 
 rob_rows=[]
+# No-SQU and broader-OBEF scenario substitutions are explicit input records.
 scenarios=pd.read_csv(DATA/'P2_Sensitivity_Scenario_Definitions.csv')
 source_recovery=pd.read_csv(DATA/'P2_ITT2026_Source_Recovery_Ledger.csv').set_index('Source_ID')
 for _,sc in scenarios.iterrows():
     f=chain.copy()
     replacement=str(sc['Replacement_state'])
     if sc['Scenario_ID']=='OMN_NO_SQU':
+        # Cross-check the declared replacement against the source-recovery ledger.
         replacement=str(source_recovery.loc['OMN04','Before_recovery_state'])
     mask=f['Jurisdiction'].eq(sc['Jurisdiction'])
     assert mask.sum()==1 and sc['Layer'] in ['L1','L2','L3','L4']
@@ -60,8 +62,10 @@ for _,sc in scenarios.iterrows():
     l3,l4,disc,n=chain_metrics(f)
     interp='Discontinuity already present' if sc['Scenario_ID']=='OMN_NO_SQU' else 'Gap persists under more permissive L3 coding'
     rob_rows.append([sc['Scenario'],frac(l3,n),frac(l4,n),frac(disc,n),interp])
+# Insert primary state between the two declared source/gate scenarios.
 l3,l4,disc,n=chain_metrics(chain)
 rob_rows.insert(1,['Primary recovered chain',frac(l3,n),frac(l4,n),frac(disc,n),'Same direction; larger extent'])
+# Leave-one-jurisdiction diagnostics.
 no_sau=chain[chain['Jurisdiction']!='Saudi Arabia'].copy(); l3,l4,disc,n=chain_metrics(no_sau)
 rob_rows.append(['Leave out Saudi Arabia',frac(l3,n),frac(l4,n),frac(disc,n),'Only L3-explicit jurisdiction removed'])
 other=[]
@@ -73,6 +77,7 @@ rob_rows.append(['Leave out any one other jurisdiction',frac(l3,n),frac(l4,n),fr
 rob=pd.DataFrame(rob_rows,columns=['Analysis_condition','L3_explicit','L4_explicit','L4E_L3_notE','Interpretation'])
 rob.to_csv(DATA/'P2_ITT2026_Robustness_Summary.csv',index=False)
 
+# Interval-valued representation from the locked chain.
 ivfs_rows=[]
 for layer in ['L1','L2','L3','L4']:
     vals=chain[layer]; e=int((vals=='E').sum()); p=int((vals=='P').sum()); u=int((vals=='U').sum()); n=len(vals)
@@ -80,6 +85,7 @@ for layer in ['L1','L2','L3','L4']:
 ivfs=pd.DataFrame(ivfs_rows,columns=['Layer','E_count','P_count','U_count','n','Envelope_lower','Envelope_upper'])
 ivfs.to_csv(DATA/'P2_ITT2026_IVFS_Representation_Robustness.csv',index=False,float_format='%.6f')
 
+# Oldest-three-with-ties from the finalized selected panel.
 old3=[]
 for (jur,st),g in ledger.groupby(['Jurisdiction','Stratum'],sort=False):
     g=g.sort_values(['Founding_year','Institution'])
@@ -90,12 +96,14 @@ old3[['Jurisdiction','Stratum','Institution','Founding_year','Final_state']].to_
 o3=(old3.pivot_table(index='Jurisdiction',columns='Final_state',values='Institution',aggfunc='count',fill_value=0).reindex(columns=states,fill_value=0)); o3['N']=o3.sum(axis=1)
 o3.reset_index().to_csv(DATA/'P2_Oldest3_Tie_Sensitivity_Summary.csv',index=False)
 
+# UAE OBEF representation sensitivity: primary and broader interpretation.
 adv=pd.DataFrame([
  ['Primary governance-control gate','P',1,2,3,1/6,3/6,1/2],
  ['Broader HE operational-framework gate','E',2,1,3,2/6,3/6,1/2],
 ],columns=['Scenario','UAE_L3','L3_E','L3_P','L3_U','Envelope_lower','Envelope_upper','Minimum_L4_minus_L3'])
 adv.to_csv(DATA/'P2_UAE_OBEF_L3_Broader_Sensitivity.csv',index=False,float_format='%.6f')
 
+# Categorical Fig. 1: E/P/U are nominal states, not a numerical continuum.
 state_val={'U':0,'P':1,'E':2}
 mat=np.array([[state_val[x] for x in row] for row in chain[['L1','L2','L3','L4']].values])
 colors=['#440154','#21918c','#fde725']; cmap=ListedColormap(colors); norm=BoundaryNorm([-0.5,0.5,1.5,2.5],cmap.N)
@@ -111,6 +119,7 @@ handles=[Patch(facecolor='#fde725',edgecolor='0.3',label='E  Explicit'),Patch(fa
 ax.legend(handles=handles,loc='upper center',bbox_to_anchor=(0.5,-0.18),ncol=3,frameon=False,fontsize=10)
 fig.tight_layout(); fig.savefig(DATA/'Fig1_GCC_Evidence_Chain_ITT2026.png',dpi=300,bbox_inches='tight'); plt.close(fig)
 
+# Repository-only auxiliary visualization; it is not a manuscript figure.
 jur_order=['UAE','Saudi Arabia','Qatar','Oman','Bahrain','Kuwait']; strata=['G1','G2','G3']
 fig,ax=plt.subplots(figsize=(7.15,3.35)); ax.set_xlim(0,3); ax.set_ylim(0,6); ax.invert_yaxis(); ax.axis('off')
 for c,g in enumerate(strata): ax.text(c+0.5,-0.16,{'G1':'G1 public/general','G2':'G2 private/non-gov.','G3':'G3 public applied/specialized'}[g],ha='center',va='bottom',fontsize=8.3,fontweight='bold')
@@ -123,9 +132,11 @@ for r,jur in enumerate(jur_order):
         ax.text(c+0.5,r+0.69,f"n={int(z.N)}",ha='center',va='center',fontsize=7.3)
 ax.text(1.5,6.18,'Corrected 58-institution panel; nominal documentary states only (not prevalence or maturity scores)',ha='center',va='top',fontsize=7.5)
 fig.tight_layout(pad=0.6); fig.savefig(DATA/'Auxiliary_58_Institution_Stratified_Audit.png',dpi=300,bbox_inches='tight'); plt.close(fig)
+# Remove legacy ambiguous name if present.
 legacy=DATA/'Fig2_58_Institution_Stratified_Audit.png'
 if legacy.exists(): legacy.unlink()
 
+# Locked scientific assertions.
 assert ledger['Final_state'].value_counts().to_dict()=={'U':24,'E':21,'P':13}
 expected={'UAE':(6,4,4,14),'Saudi Arabia':(3,4,4,11),'Qatar':(2,2,6,10),'Oman':(2,1,5,8),'Bahrain':(6,0,1,7),'Kuwait':(2,2,4,8)}
 for j,v in expected.items():
