@@ -1,0 +1,3 @@
+Scenario,UAE_L3,L3_E,L3_P,L3_U,Envelope_lower,Envelope_upper,Minimum_L4_minus_L3
+Primary governance-control gate,P,1,2,3,0.166667,0.500000,0.500000
+Broader HE operational-framework gate,E,2,1,3,0.333333,0.500000,0.500000
