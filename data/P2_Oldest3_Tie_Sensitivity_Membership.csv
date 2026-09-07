@@ -1,0 +1,48 @@
+Jurisdiction,Stratum,Institution,Founding_year,Final_state
+UAE,G1,United Arab Emirates University,1976,E
+UAE,G1,University of Sharjah,1997,E
+UAE,G1,Zayed University,1998,E
+UAE,G2,Ajman University,1988,E
+UAE,G2,University of Wollongong in Dubai,1993,P
+UAE,G2,American University in Dubai,1995,P
+UAE,G3,Fatima College of Health Sciences,2006,U
+UAE,G3,Emirates College for Advanced Education,2007,U
+UAE,G3,Abu Dhabi Polytechnic,2010,U
+Saudi Arabia,G1,King Saud University,1957,E
+Saudi Arabia,G1,King Abdulaziz University,1967,E
+Saudi Arabia,G1,Imam Mohammad Ibn Saud Islamic University,1974,U
+Saudi Arabia,G2,Dar Al-Hekma University,1999,U
+Saudi Arabia,G2,Effat University,1999,U
+Saudi Arabia,G2,Prince Sultan University,1999,E
+Saudi Arabia,G3,Islamic University of Madinah,1961,P
+Saudi Arabia,G3,King Fahd University of Petroleum and Minerals,1963,P
+Saudi Arabia,G3,King Saud bin Abdulaziz University for Health Sciences,2005,U
+Qatar,G1,Qatar University,1977,E
+Qatar,G1,Community College of Qatar,2010,U
+Qatar,G2,Virginia Commonwealth University School of the Arts in Qatar,1998,E
+Qatar,G2,Al Rayyan International University College,2000,U
+Qatar,G2,Weill Cornell Medicine-Qatar,2001,P
+Qatar,G3,Qatar Aeronautical Academy,1977,U
+Qatar,G3,Qatar Olympic Academy,2006,U
+Qatar,G3,Qatar Leadership Centre,2008,U
+Oman,G1,Sultan Qaboos University,1986,E
+Oman,G2,Majan University College,1995,E
+Oman,G2,Modern College of Business and Science,1996,U
+Oman,G2,Muscat College,1996,P
+Oman,G3,College of Sharia Sciences,1986,U
+Oman,G3,Oman College of Health Sciences,2018,U
+Oman,G3,University of Technology and Applied Sciences,2020,U
+Bahrain,G1,University of Bahrain,1986,E
+Bahrain,G2,Bahrain Institute of Banking and Finance,1981,E
+Bahrain,G2,Ahlia University,2001,E
+Bahrain,G2,Gulf University,2001,E
+Bahrain,G2,Kingdom University,2001,U
+Bahrain,G3,Arabian Gulf University,1980,E
+Bahrain,G3,Bahrain Polytechnic,2008,E
+Kuwait,G1,Kuwait University,1966,E
+Kuwait,G1,Abdullah Al-Salem University,2019,U
+Kuwait,G2,Arab Open University-Kuwait,2002,U
+Kuwait,G2,Gulf University for Science and Technology,2002,E
+Kuwait,G2,American University of Kuwait,2003,P
+Kuwait,G3,Public Authority for Applied Education and Training,1982,U
+Kuwait,G3,Kuwait Academy of Arts,2010,U
