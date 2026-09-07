@@ -1,6 +1,6 @@
 # FAIGRI / EAGLE Paper 2 - Reproducibility Archive
 
-This archive supports the ITT 2026 paper **“From National AI Ambition to University Rules: A Bilingual GCC Evidence-Chain Audit.”**
+This private repository supports the ITT 2026 paper **“From National AI Ambition to University Rules: A Bilingual GCC Evidence-Chain Audit.”**
 
 ## What the archive preserves and derives
 The documentary classifications are locked analytical inputs. The archive preserves those classifications and reproducibly derives:
@@ -10,7 +10,7 @@ The documentary classifications are locked analytical inputs. The archive preser
 - interval-valued fuzzy representation envelopes;
 - broader UAE OBEF L3 sensitivity;
 - manuscript Fig. 1; and
-- a **repository-only auxiliary institutional-panel visualization** (`Auxiliary_58_Institution_Stratified_Audit.png`).
+- a repository-only auxiliary institutional-panel visualization (`Auxiliary_58_Institution_Stratified_Audit.png`).
 
 It also provides selected-HEI eligibility certificates, jurisdictional official-registry sources, the retrospective eligibility-boundary audit, and the documented `U` search stopping rule.
 
@@ -22,5 +22,7 @@ The complete pre-outcome eligible universe beyond the original oldest-four bound
 ## Claim boundary
 The package preserves documentary classifications and derives numerical outputs from them. It does not establish implementation quality, sector prevalence, country ranking, causal policy translation, or absence of non-public institutional rules. `U` means that qualifying public evidence was not located under the documented protocol by the cutoff.
 
-## Public-release status
-This archive is suitable for scientific review. A public GitHub/Zenodo release remains **HOLD** during double-blind review and until the authors choose formal licenses for author-created code/data/documentation. No software or data license is selected on the authors' behalf.
+## Repository status
+This GitHub repository is currently **PRIVATE** for double-blind review protection. Do not make it public until author anonymity is no longer required (or the venue explicitly permits an author-identifying artifact) and the authors choose final licenses for code and author-created data/documentation.
+
+No Zenodo deposition is being used at this stage.
