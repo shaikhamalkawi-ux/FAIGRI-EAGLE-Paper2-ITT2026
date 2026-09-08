@@ -1,14 +1,14 @@
-# Public-release checklist - HOLD
+# Public repository status checklist
 
-This repository is a **private review-stage release candidate**, not a public-final release.
+This GitHub repository is currently **PUBLIC**.
 
-Do not make it public until all of the following are true:
-- double-blind review no longer requires author anonymity, or the venue explicitly permits an author-identifying public artifact;
-- the authors choose formal licenses for code and author-created data/documentation;
-- the camera-ready manuscript is ready for the final GitHub citation/link;
-- final repository URL and release metadata have been inserted only in the non-anonymous camera-ready version;
-- final release hashes and citation metadata have been regenerated.
+Before treating it as the permanent camera-ready archival release, complete the following:
+- confirm that public repository visibility is compatible with the venue's double-blind policy;
+- choose formal licenses for author-created code and data/documentation;
+- complete the retrospective full-frame eligibility completeness audit without presenting it as the original pre-outcome universe;
+- regenerate final release hashes and citation metadata after the last scientific/production freeze;
+- insert the final GitHub citation/link only in the non-anonymous author/camera-ready manuscript unless the venue explicitly permits an author-identifying artifact during review.
 
-No Zenodo deposition is planned for the current review stage.
+No Zenodo deposition is planned at this stage.
 
-The scientific archive itself has passed deterministic reproduction and integrity checks in the prepared release candidate.
+The current scientific archive has passed deterministic numerical reproduction and integrity checks in the prepared release candidate.
