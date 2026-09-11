@@ -1,6 +1,6 @@
-# FAIGRI / EAGLE Paper 2 - Reproducibility Archive
+# From AI Strategy to University Rules in the GCC
 
-This public repository supports the ITT 2026 paper **“From National AI Ambition to University Rules: A Bilingual GCC Evidence-Chain Audit.”**
+This public repository supports the ICAMAC 2026 paper **“From AI Strategy to University Rules in the GCC.”**
 
 ## What the archive preserves and derives
 The documentary classifications are locked analytical inputs. The archive preserves those classifications and reproducibly derives:
